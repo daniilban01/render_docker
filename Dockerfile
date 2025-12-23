@@ -20,4 +20,4 @@ COPY --from=build /workspace/target/*.jar /app/app.jar
 # This also supports Render's PORT env var if you prefer.
 EXPOSE 8080
 
-ENTRYPOINT ["sh", "-c", "java -Dserver.port=\${PORT:-8080} -jar /app/app.jar"]
+CMD [“java”, “-jar”, “app.jar”] 
