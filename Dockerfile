@@ -18,6 +18,6 @@ COPY --from=build /workspace/target/*.jar /app/app.jar
 
 # Render will route to the port you set in the service settings.
 # This also supports Render's PORT env var if you prefer.
-EXPOSE 5000
+EXPOSE 8080
 
-ENTRYPOINT ["sh", "-c", "java -Dserver.port=\${PORT:-5000} -jar /app/app.jar"]
+ENTRYPOINT ["sh", "-c", "java -Dserver.port=\${PORT:-8080} -jar /app/app.jar"]
