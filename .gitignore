@@ -1,0 +1,66 @@
+# Ignore Maven & Gradle build output
+/target/
+!*/src/main/resources/static/**/*
+!*/src/main/resources/public/**/*
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Logs
+logs/
+*.log
+*.log.*
+hs_err_pid*
+*.stacktrace
+
+# Node modules (if using frontend)
+node_modules/
+
+# Spring Boot environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+application-*.yml
+application-*.properties
+
+# Compiled Java classes
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Generated files
+bin/
+build/
+.mvn/
+*.swp
+
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
