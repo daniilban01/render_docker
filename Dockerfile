@@ -1,23 +1,14 @@
-# ---- Build stage ----
 FROM maven:3.9-eclipse-temurin-17 AS build
-WORKDIR /workspace
-
-# Leverage Docker layer caching
+WORKDIR /app
 COPY pom.xml .
 COPY src ./src
+RUN mvn -DskipTests clean package
 
-# Build the application (runs tests by default)
-RUN mvn -B clean package
-
-# ---- Run stage ----
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 
-# Copy the built jar (adjust the pattern if you change the artifact name)
-COPY --from=build /workspace/target/*.jar /app/app.jar
+COPY --from=build /app/target/*.jar app.jar
 
-# Render will route to the port you set in the service settings.
-# This also supports Render's PORT env var if you prefer.
 EXPOSE 8080
 
-CMD [“java”, “-jar”, “app.jar”] 
+ENTRYPOINT ["java","-jar","app.jar"] 
