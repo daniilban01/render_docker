@@ -10,6 +10,6 @@ public class HomeController {
 
     @GetMapping
     public String home() {
-        return "SkillBrain Spring Boot Application is running! -> Test WEBINAR";
+        return "Craciun fericit!";
     }
 }
