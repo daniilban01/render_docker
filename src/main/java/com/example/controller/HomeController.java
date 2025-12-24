@@ -10,6 +10,6 @@ public class HomeController {
 
     @GetMapping
     public String home() {
-        return "Craciun fericit!";
+        return "Merry Christmas!";
     }
 }
